@@ -1,0 +1,314 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+@import "function";
+@import "base";
+@import "header";
+@import "banner";
+@import "selectOption";
+@import "product";
+@import "intro";
+@import "blog";
+@import "button";
+@import "brand";
+@import "mobileMenu";
+.backTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #fff;
+  box-shadow: 0 0 5px 1px rgba(#000, 0.2);
+  @include size(40px);
+  @include flex-center;
+  cursor: pointer;
+  @include hide;
+  transition: 0.3s;
+}
+.show-backTop {
+  @include show;
+}
+// > Best seller
+.bestSeller {
+  margin-bottom: 11px;
+}
+// Best seller <
+// > Special offer
+.special-offer {
+  .product {
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 29px;
+    margin: 0 0 21px 0;
+    width: 100%;
+    &-media {
+      padding: 20px 0 0;
+      img {
+        width: auto;
+      }
+    }
+    &-cat {
+      letter-spacing: -0.13px;
+      margin-bottom: 11px;
+    }
+    &-title {
+      font-weight: 300;
+      color: #666;
+      margin-bottom: 3px;
+      letter-spacing: -0.04px;
+    }
+    &-color-list {
+      margin-top: 19px;
+    }
+    &-body {
+      padding: 5px 20px 29px;
+    }
+    &-price {
+      margin-bottom: 12px;
+    }
+    &-countdown {
+      position: static;
+      transform: none;
+    }
+    &:hover {
+      .product-countdown {
+        transform: none;
+      }
+    }
+  }
+  .label {
+    top: 9px;
+    left: 21px;
+  }
+  .ratings {
+    width: fit-content;
+  }
+  .addToCart {
+    bottom: 0;
+    padding: 10px;
+  }
+}
+// Special offer <
+
+// > Trending
+.trending {
+  background: #fafafa;
+  padding: 50px;
+  &-nav {
+    font-size: 16px;
+    &-item {
+      margin-left: 10px;
+      a {
+        display: block;
+        color: $body-text;
+        padding: 4.5px 10px 15px;
+        transition: color 0.25s;
+        line-height: 1.5;
+        letter-spacing: -0.3px;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      .nav-active {
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+  }
+  &-products {
+    padding: 22px 0 13px;
+    margin-right: -10px;
+    margin-left: -10px;
+    position: relative;
+  }
+  .flickity-page-dots {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .flickity-slider {
+    margin-left: -10px;
+  }
+}
+.flickity-resize .product {
+  min-height: calc(100% - 50px);
+}
+// Trending <
+// > Category banner electronic
+.electronic {
+  margin-top: 50px;
+  .cat-banner-list {
+    background-image: url(../imgs/banners/banner-bg-1.jpg);
+  }
+  &-wrapper {
+    margin-top: -25px;
+  }
+}
+.furniture {
+  margin-top: 20px;
+  margin-bottom: 19px;
+  .cat-banner-list {
+    background-image: url(../imgs/banners/banner-bg-2.jpg);
+  }
+  &-wrapper {
+    margin-top: -25px;
+  }
+}
+.clothing {
+  margin-top: 47px;
+  margin-bottom: 19px;
+  .cat-banner-list {
+    background-image: url(../imgs/banners/banner-bg-3.jpg);
+  }
+  &-wrapper {
+    margin-top: -25px;
+  }
+}
+.cat-banner-wrapper {
+  .product {
+    min-height: calc(100% - 50px);
+    width: calc(25% - 20px);
+    &-media {
+      padding: 17px 0 25px;
+    }
+    &-body {
+      padding: 0 20px 20px;
+    }
+  }
+  .flickity-slider {
+    margin-left: -10px;
+  }
+  .banner {
+    img {
+      transition: all 0.25s;
+    }
+    &:hover img {
+      filter: brightness(0.85);
+    }
+  }
+  .cat-banner-list {
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
+.cooking {
+  margin-bottom: 13px;
+  .cat-banner-list {
+    background-image: url(../imgs/banners/banner-bg-4.jpg);
+  }
+  &-wrapper {
+    margin-top: -25px;
+  }
+  .product-media {
+    padding: 17px 0 6px;
+  }
+}
+.cat-banner-list {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.cat-banner .banner {
+  .banner-content {
+    left: 45px;
+    bottom: 53px;
+    top: 41px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transform: none;
+  }
+  .banner-subtitle {
+    color: #ebebeb;
+    margin-bottom: 9px;
+  }
+  .banner-link {
+    margin-top: auto;
+  }
+}
+.banner-list-content {
+  padding-left: 40px;
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 4px;
+    margin-bottom: 15px;
+  }
+  a {
+    color: #333;
+    position: relative;
+    display: inline-block;
+    transition: color 0.25s;
+    &:hover {
+      color: $primary-color;
+      &::before {
+        background: $primary-color;
+      }
+    }
+  }
+  ul {
+    li:last-child {
+      a {
+        color: $primary-color;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom: 1px solid $primary-color;
+        }
+      }
+      a::before {
+        background: $primary-color;
+      }
+    }
+    a {
+      padding: 7px 13px;
+    }
+    a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #000;
+      transition: all 0.25s;
+    }
+  }
+}
+// Category banner electronic <
+// > Icon box
+.icon-boxes-container {
+  background: #fafafa;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  margin-bottom: 51px;
+}
+.icon-box {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: -15px;
+  &-icon {
+    font-size: 40px;
+    min-width: 70px;
+    text-align: center;
+    line-height: 1;
+  }
+  &-content {
+    font-size: 16px;
+    p {
+      color: #777;
+      font-weight: 300;
+      letter-spacing: -0.16px;
+    }
+  }
+  &-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    margin-top: 2px;
+    letter-spacing: -0.3px;
+  }
+}
+// Icon box <
+
+@import "footer";
+@import "responsive";
